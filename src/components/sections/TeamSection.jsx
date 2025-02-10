@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Twitter, Mail, Plus } from 'lucide-react';
+import { Linkedin, Twitter, Mail, Plus, Instagram } from 'lucide-react';
 
 const TeamMemberCard = ({ image, name, role }) => (
   <div className="group relative">
@@ -28,7 +28,7 @@ const TeamMemberCard = ({ image, name, role }) => (
           </a>
           <a href="#" className="w-10 h-10 bg-white/10 backdrop-blur-lg rounded-full flex items-center justify-center
                               hover:bg-white hover:text-indigo-600 transition-colors duration-300">
-            <Mail style={{color: "white"}}  className="w-5 h-5" />
+            <Instagram style={{color: "white"}}  className="w-5 h-5" />
           </a>
         </div>
         
