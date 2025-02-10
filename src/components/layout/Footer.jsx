@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Facebook, Twitter, Instagram, Send, ChevronRight, Mail } from 'lucide-react';
+import { scrollToSection } from '../../utils/scrollUtils';
 
 const SocialIcon = ({ icon: Icon, href, delay }) => (
   <a 
@@ -19,9 +20,16 @@ const SocialIcon = ({ icon: Icon, href, delay }) => (
   </a>
 );
 
-const FooterLink = ({ children, delay = "0s" }) => (
+const FooterLink = ({ children, section, delay = "0s" }) => (
   <div className="relative overflow-hidden" style={{ animationDelay: delay }}>
-    <a href="#" className="group flex items-center py-2 transform hover:-translate-x-2 transition-transform duration-300">
+    <a 
+      href={`#${section}`}
+      onClick={(e) => {
+        e.preventDefault();
+        if (section) scrollToSection(section);
+      }} 
+      className="group flex items-center py-2 transform hover:-translate-x-2 transition-transform duration-300"
+    >
       <div className="w-8">
         <div className="w-2 h-2 bg-indigo-600 rounded-full opacity-0 group-hover:opacity-100 
                       transform translate-x-4 group-hover:translate-x-0 transition-all duration-300"></div>
@@ -58,7 +66,11 @@ const Newsletter = () => {
       {/* Content */}
       <div className="relative">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-sm font-semibold text-gray-400 tracking-wider">NEWSLETTER</span>
+          <div className="flex items-center text-indigo-600">
+            <div className="font-bold text-3xl">S</div>
+            <div className="w-4 h-4 border-t-2 border-r-2 border-indigo-600 -rotate-45 translate-y-2"></div>
+          </div>
+          <span className="text-gray-400 text-sm tracking-wider">NEWSLETTER</span>
         </div>
 
         <h4 className="text-2xl font-bold text-white mb-4">New Subscriptions</h4>
@@ -95,10 +107,31 @@ const Newsletter = () => {
 };
 
 const Footer = () => {
+  const aboutLinks = [
+    { name: 'About Us', section: 'about' },
+    { name: 'Team', section: 'team' },
+    { name: 'Projects', section: 'projects' },
+    { name: 'Contact Us', section: 'contact' }
+  ];
+
+  const serviceLinks = [
+    { name: 'Web Development', section: 'services' },
+    { name: 'Digital Marketing', section: 'services' },
+    { name: 'Business Analysis', section: 'services' },
+    { name: 'UI/UX Design', section: 'services' },
+    { name: 'Cloud Services', section: 'services' }
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, href: '#' },
+    { icon: Twitter, href: '#' },
+    { icon: Instagram, href: '#' },
+  ];
+
   return (
     <footer className="relative bg-[#080B14] pt-24">
       {/* Top Banner */}
-      <div className="absolute top-0 left-0 right-0 h-48">
+      <div className="absolute top-0 left-0 right-0 h-48 bg-[#0B0F1E]">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl"></div>
           <div className="absolute top-0 right-1/3 w-48 h-48 bg-indigo-600/10 rounded-full blur-3xl"></div>
@@ -116,11 +149,11 @@ const Footer = () => {
                 Progressively create empowered. Cost effective users via team driven.
               </p>
               <div className="flex gap-4">
-                {[Facebook, Twitter, Instagram].map((icon, index) => (
+                {socialLinks.map((item, index) => (
                   <SocialIcon 
                     key={index} 
-                    icon={icon} 
-                    href="#" 
+                    icon={item.icon} 
+                    href={item.href} 
                     delay={`${index * 100}ms`}
                   />
                 ))}
@@ -132,8 +165,14 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <FooterSection title="ABOUT COMPANY">
               <div className="space-y-2">
-                {['About Us', 'Team', 'Faq', 'Projects', 'Contact Us'].map((link, index) => (
-                  <FooterLink key={link} delay={`${index * 100}ms`}>{link}</FooterLink>
+                {aboutLinks.map((link, index) => (
+                  <FooterLink 
+                    key={link.name} 
+                    delay={`${index * 100}ms`}
+                    section={link.section}
+                  >
+                    {link.name}
+                  </FooterLink>
                 ))}
               </div>
             </FooterSection>
@@ -143,14 +182,14 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <FooterSection title="IT SERVICES">
               <div className="space-y-2">
-                {[
-                  'Web Development',
-                  'Business Development',
-                  'Product Management',
-                  'UI/UX Design',
-                  'Cloud Services'
-                ].map((service, index) => (
-                  <FooterLink key={service} delay={`${index * 100}ms`}>{service}</FooterLink>
+                {serviceLinks.map((link, index) => (
+                  <FooterLink 
+                    key={link.name} 
+                    delay={`${index * 100}ms`}
+                    section={link.section}
+                  >
+                    {link.name}
+                  </FooterLink>
                 ))}
               </div>
             </FooterSection>

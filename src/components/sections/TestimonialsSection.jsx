@@ -99,7 +99,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden bg-gradient-to-b from-gray-50/50 to-white">
+    <section id="testimonials" className="relative py-32 overflow-hidden bg-gradient-to-b from-gray-50/50 to-white">
       <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-16">

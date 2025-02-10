@@ -8,6 +8,7 @@ import TestimonialsSection from './components/sections/TestimonialsSection';
 import AboutUsSection from './components/sections/AboutUs';
 import WorkProcessSection from './components/sections/WorkProcessSection';
 import ProjectsSection from './components/sections/ProjectsSection';
+import ContactSection from './components/sections/ContactSection';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <ProjectsSection />
         <WorkProcessSection/>
         <TeamSection />
+        <ContactSection/>
         <TestimonialsSection />
       </main>
       <Footer />

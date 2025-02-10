@@ -75,7 +75,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section id="projects" className="relative py-20 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-0 w-72 h-72 bg-indigo-600/10 rounded-full blur-3xl"></div>

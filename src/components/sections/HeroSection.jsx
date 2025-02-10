@@ -3,12 +3,23 @@ import { Play, ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section id="home" className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(45deg,#f3f4f6_25%,transparent_25%,transparent_75%,#f3f4f6_75%,#f3f4f6),linear-gradient(45deg,#f3f4f6_25%,transparent_25%,transparent_75%,#f3f4f6_75%,#f3f4f6)] bg-[length:60px_60px] opacity-30"></div>
       
       <div className="container mx-auto px-4 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Image for mobile - Positioned absolutely */}
+          <div className="absolute inset-0 lg:hidden">
+            <div className="w-full h-full opacity-10">
+              <img 
+                src="/src/assets/images/image 1.png"
+                alt="Background illustration"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+
           {/* Left Content */}
           <div className="relative z-10">
             <div className="inline-block px-4 py-2 bg-indigo-100 rounded-full mb-6">
@@ -38,8 +49,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Content */}
-          <div className="relative">
+          {/* Right Content - Hidden on mobile */}
+          <div className="relative hidden lg:block">
             <div className="relative z-10">
               <img 
                 src="/src/assets/images/image 1.png"
@@ -51,8 +62,6 @@ const HeroSection = () => {
             {/* Decorative elements */}
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-100 rounded-full opacity-50 blur-2xl"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-100 rounded-full opacity-50 blur-2xl"></div>
-            
-
           </div>
         </div>
       </div>

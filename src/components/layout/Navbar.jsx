@@ -1,60 +1,101 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Search, ShoppingCart, ChevronDown } from 'lucide-react';
+import { scrollToSection } from '../../utils/scrollUtils';
 
 const Logo = () => (
-  <div className="flex items-center gap-3">
-
+  <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('home')}>
     <span className="text-xl font-bold text-[#2B004D]">SOFTAN TECH</span>
+  </div>
+);
+
+const NavItem = ({ name, href, hasDropdown, onClick }) => (
+  <div className="relative group">
+    <a 
+      href={href}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick();
+      }}
+      className="flex items-center text-sm font-medium text-gray-700 hover:text-indigo-600 transition-colors"
+    >
+      {name}
+      {hasDropdown && <ChevronDown className="ml-1 w-4 h-4" />}
+    </a>
   </div>
 );
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   const menuItems = [
-    { name: 'HOME', hasDropdown: true },
-    { name: 'ABOUT US', hasDropdown: false },
-    { name: 'SERVICES', hasDropdown: true },
-    { name: 'PAGES', hasDropdown: true },
-    { name: 'BLOG', hasDropdown: true },
-    { name: 'CONTACT US', hasDropdown: false },
+    { name: 'HOME', hasDropdown: false, href: '#home', section: 'home' },
+    { name: 'ABOUT US', hasDropdown: false, href: '#about', section: 'about' },
+    { name: 'SERVICES', hasDropdown: false, href: '#services', section: 'services' },
+    { name: 'PROJECTS', hasDropdown: false, href: '#projects', section: 'projects' },
+    { name: 'THE PROCESS', hasDropdown: false, href: '#process', section: 'process' },
+    { name: 'TEAM', hasDropdown: false, href: '#team', section: 'team' },
+    { name: 'TESTIMONIALS', hasDropdown: false, href: '#testimonials', section: 'testimonials' },
+    { name: 'CONTACT US', hasDropdown: false, href: '#contact', section: 'contact' },
   ];
+
+  // Handle scroll and update active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = menuItems.map(item => item.section);
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const top = element.offsetTop;
+          const height = element.offsetHeight;
+          
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavClick = (section) => {
+    scrollToSection(section);
+    setIsOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Background with glass effect */}
       <div className="absolute inset-0 bg-white/80 backdrop-blur-md"></div>
       
-      <nav className="relative mx-auto max-w-[1400px] px-6">
+      <nav className="relative mx-auto max-w-[1800px] px-6">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Logo />
+          <div className="flex items-center space-x-8">
+            <Logo />
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {menuItems.map((item) => (
-              <div key={item.name} className="relative group">
-                <a 
-                  href="#" 
-                  className="flex items-center text-sm font-medium text-gray-700 hover:text-indigo-600 transition-colors"
-                >
-                  {item.name}
-                  {item.hasDropdown && (
-                    <ChevronDown className="ml-1 w-4 h-4" />
-                  )}
-                </a>
-              </div>
-            ))}
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-8">
+              {menuItems.map((item) => (
+                <NavItem 
+                  key={item.name}
+                  {...item}
+                  onClick={() => handleNavClick(item.section)}
+                  isActive={activeSection === item.section}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Right Side Items */}
           <div className="hidden lg:flex items-center gap-6">
-            {/* Search */}
             <button className="text-gray-700 hover:text-indigo-600 transition-colors">
               <Search className="w-5 h-5" />
             </button>
             
-            {/* Cart */}
             <div className="relative">
               <ShoppingCart className="w-5 h-5 text-gray-700 hover:text-indigo-600 transition-colors" />
               <span className="absolute -top-2 -right-2 w-5 h-5 bg-indigo-600 text-white text-xs rounded-full flex items-center justify-center">
@@ -62,8 +103,10 @@ const Navbar = () => {
               </span>
             </div>
             
-            {/* Appointment Button */}
-            <button className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition-colors">
+            <button 
+              onClick={() => handleNavClick('contact')}
+              className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition-colors"
+            >
               <span className="text-sm font-medium">MAKE APPOINTMENT</span>
               <ChevronDown className="w-4 h-4" />
             </button>
@@ -98,14 +141,21 @@ const Navbar = () => {
               {menuItems.map((item) => (
                 <a
                   key={item.name}
-                  href="#"
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.section);
+                  }}
                   className="flex items-center justify-between text-gray-700 hover:text-indigo-600 transition-colors py-2"
                 >
                   <span className="text-sm font-medium">{item.name}</span>
                   {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
                 </a>
               ))}
-              <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-6 py-3 rounded-lg transition-colors mt-4">
+              <button 
+                onClick={() => handleNavClick('contact')}
+                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-6 py-3 rounded-lg transition-colors mt-4"
+              >
                 MAKE APPOINTMENT
               </button>
             </div>

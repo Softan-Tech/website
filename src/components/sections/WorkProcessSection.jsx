@@ -69,7 +69,7 @@ const WorkProcessSection = () => {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section id="process" className="relative py-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-40 left-0 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl"></div>

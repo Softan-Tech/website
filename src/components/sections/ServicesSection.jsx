@@ -91,7 +91,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="relative">
+    <section  id="services" className="relative">
       {/* Main Background Image with Overlay */}
       <div className="absolute inset-0">
         <img

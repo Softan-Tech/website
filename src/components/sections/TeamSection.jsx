@@ -67,7 +67,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section id="team" className="relative py-32 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-3xl opacity-50 transform translate-x-1/2 -translate-y-1/2"></div>
