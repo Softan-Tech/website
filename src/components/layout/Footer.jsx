@@ -66,10 +66,6 @@ const Newsletter = () => {
       {/* Content */}
       <div className="relative">
         <div className="flex items-center gap-3 mb-2">
-          <div className="flex items-center text-indigo-600">
-            <div className="font-bold text-3xl">S</div>
-            <div className="w-4 h-4 border-t-2 border-r-2 border-indigo-600 -rotate-45 translate-y-2"></div>
-          </div>
           <span className="text-gray-400 text-sm tracking-wider">NEWSLETTER</span>
         </div>
 
