@@ -3,10 +3,11 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import HeroSection from './components/sections/HeroSection';
 import ServicesSection from './components/sections/ServicesSection';
-import ExperienceSection from './components/sections/ExperienceSection';
 import TeamSection from './components/sections/TeamSection';
 import TestimonialsSection from './components/sections/TestimonialsSection';
-import NewsletterSection from './components/sections/NewsletterSection';
+import AboutUsSection from './components/sections/AboutUs';
+import WorkProcessSection from './components/sections/WorkProcessSection';
+import ProjectsSection from './components/sections/ProjectsSection';
 
 const App = () => {
   return (
@@ -14,11 +15,12 @@ const App = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <AboutUsSection/>
         <ServicesSection />
-        <ExperienceSection />
+        <ProjectsSection />
+        <WorkProcessSection/>
         <TeamSection />
         <TestimonialsSection />
-        <NewsletterSection />
       </main>
       <Footer />
     </div>

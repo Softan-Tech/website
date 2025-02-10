@@ -1,46 +1,58 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { Play, ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="pt-24 pb-16 md:pt-32 md:pb-24">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+    <section className="relative min-h-screen pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(45deg,#f3f4f6_25%,transparent_25%,transparent_75%,#f3f4f6_75%,#f3f4f6),linear-gradient(45deg,#f3f4f6_25%,transparent_25%,transparent_75%,#f3f4f6_75%,#f3f4f6)] bg-[length:60px_60px] opacity-30"></div>
+      
+      <div className="container mx-auto px-4 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="relative z-10">
+            <div className="inline-block px-4 py-2 bg-indigo-100 rounded-full mb-6">
+              <span className="text-indigo-600 font-medium">BEST TECH SERVICE</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
               Make The Easiest Solution For You
             </h1>
-            <p className="text-gray-600 text-lg mb-8">
-              We help businesses succeed with technology by providing innovative solutions
-              and expert services.
+            
+            <p className="text-gray-600 text-lg mb-8 max-w-xl">
+              Energistically harness ubiquitous imperative without state of the art collaboration and idea-sharing. Monotonectally parallel task cross-unit experience and front-end.
             </p>
-            <div className="flex space-x-4">
-              <button className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary-dark transition-colors flex items-center">
-                Get Started
-                <ArrowRight className="ml-2" size={20} />
+            
+            <div className="flex flex-wrap gap-4">
+              <button className="px-8 py-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all flex items-center group shadow-lg hover:shadow-indigo-500/50">
+                <span>ABOUT US</span>
+                <ArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform" size={20} />
               </button>
-              <button className="border-2 border-primary text-primary px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors">
-                Learn More
+              
+              <button className="px-6 py-4 flex items-center space-x-3 text-gray-700 hover:text-indigo-600 transition-colors group">
+                <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:shadow-indigo-500/30 transition-all">
+                  <Play className="w-5 h-5 fill-current" />
+                </div>
+                <span className="font-medium">Watch Our Story</span>
               </button>
             </div>
           </div>
+
+          {/* Right Content */}
           <div className="relative">
-            <img 
-              src="/api/placeholder/600/500"
-              alt="Hero illustration"
-              className="w-full rounded-lg shadow-xl"
-            />
-            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
-                  10+
-                </div>
-                <div>
-                  <p className="font-semibold">Years of</p>
-                  <p className="text-primary">Experience</p>
-                </div>
-              </div>
+            <div className="relative z-10">
+              <img 
+                src="/src/assets/images/image 1.png"
+                alt="Team collaboration illustration"
+                className="w-full h-auto rounded-lg"
+              />
             </div>
+            
+            {/* Decorative elements */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-100 rounded-full opacity-50 blur-2xl"></div>
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-100 rounded-full opacity-50 blur-2xl"></div>
+            
+
           </div>
         </div>
       </div>

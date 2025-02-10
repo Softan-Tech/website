@@ -1,71 +1,118 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { NAV_LINKS } from '@/utils/constants';
+import { Menu, X, Search, ShoppingCart, ChevronDown } from 'lucide-react';
+
+const Logo = () => (
+  <div className="flex items-center gap-3">
+
+    <span className="text-xl font-bold text-[#2B004D]">SOFTAN TECH</span>
+  </div>
+);
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const menuItems = [
+    { name: 'HOME', hasDropdown: true },
+    { name: 'ABOUT US', hasDropdown: false },
+    { name: 'SERVICES', hasDropdown: true },
+    { name: 'PAGES', hasDropdown: true },
+    { name: 'BLOG', hasDropdown: true },
+    { name: 'CONTACT US', hasDropdown: false },
+  ];
+
   return (
-    <nav className="bg-white shadow-sm fixed w-full top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Background with glass effect */}
+      <div className="absolute inset-0 bg-white/80 backdrop-blur-md"></div>
+      
+      <nav className="relative mx-auto max-w-[1400px] px-6">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-bold text-primary">
-              Softan
-            </a>
-          </div>
+          <Logo />
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-600 hover:text-primary font-medium transition-colors"
+          <div className="hidden lg:flex items-center space-x-8">
+            {menuItems.map((item) => (
+              <div key={item.name} className="relative group">
+                <a 
+                  href="#" 
+                  className="flex items-center text-sm font-medium text-gray-700 hover:text-indigo-600 transition-colors"
                 >
-                  {link.name}
+                  {item.name}
+                  {item.hasDropdown && (
+                    <ChevronDown className="ml-1 w-4 h-4" />
+                  )}
                 </a>
-              ))}
-              <button className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors">
-                Get Started
-              </button>
-            </div>
+              </div>
+            ))}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Right Side Items */}
+          <div className="hidden lg:flex items-center gap-6">
+            {/* Search */}
+            <button className="text-gray-700 hover:text-indigo-600 transition-colors">
+              <Search className="w-5 h-5" />
+            </button>
+            
+            {/* Cart */}
+            <div className="relative">
+              <ShoppingCart className="w-5 h-5 text-gray-700 hover:text-indigo-600 transition-colors" />
+              <span className="absolute -top-2 -right-2 w-5 h-5 bg-indigo-600 text-white text-xs rounded-full flex items-center justify-center">
+                0
+              </span>
+            </div>
+            
+            {/* Appointment Button */}
+            <button className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition-colors">
+              <span className="text-sm font-medium">MAKE APPOINTMENT</span>
+              <ChevronDown className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden flex items-center gap-4">
+            <button className="text-gray-700 hover:text-indigo-600 transition-colors">
+              <Search className="w-5 h-5" />
+            </button>
+            
+            <div className="relative">
+              <ShoppingCart className="w-5 h-5 text-gray-700 hover:text-indigo-600 transition-colors" />
+              <span className="absolute -top-2 -right-2 w-5 h-5 bg-indigo-600 text-white text-xs rounded-full flex items-center justify-center">
+                0
+              </span>
+            </div>
+            
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-gray-900 p-2"
+              className="text-gray-700 hover:text-indigo-600 transition-colors p-2"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {NAV_LINKS.map((link) => (
+          <div className="lg:hidden border-t border-gray-100">
+            <div className="px-4 py-3 space-y-3">
+              {menuItems.map((item) => (
                 <a
-                  key={link.name}
-                  href={link.href}
-                  className="block px-3 py-2 text-gray-600 hover:text-primary font-medium"
+                  key={item.name}
+                  href="#"
+                  className="flex items-center justify-between text-gray-700 hover:text-indigo-600 transition-colors py-2"
                 >
-                  {link.name}
+                  <span className="text-sm font-medium">{item.name}</span>
+                  {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
                 </a>
               ))}
-              <button className="w-full bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors mt-4">
-                Get Started
+              <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-6 py-3 rounded-lg transition-colors mt-4">
+                MAKE APPOINTMENT
               </button>
             </div>
           </div>
         )}
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 
