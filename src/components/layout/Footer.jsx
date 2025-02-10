@@ -127,10 +127,10 @@ const Footer = () => {
   return (
     <footer className="relative bg-[#080B14] pt-24">
       {/* Top Banner */}
-      <div className="absolute top-0 left-0 right-0 h-48 bg-[#0B0F1E]">
+      <div className="absolute top-0 left-0 right-0 h-48">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl"></div>
-          <div className="absolute top-0 right-1/3 w-48 h-48 bg-indigo-600/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-64 h-64 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-1/3 w-48 h-48 rounded-full blur-3xl"></div>
         </div>
       </div>
 
@@ -201,8 +201,8 @@ const Footer = () => {
         <div className="mt-20 py-8 border-t border-gray-800/50">
           <div className="relative">
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-indigo-600/5 rounded-full blur-3xl transform -translate-y-1/2"></div>
-              <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-indigo-600/5 rounded-full blur-3xl transform -translate-y-1/2"></div>
+              <div className="absolute top-1/2 left-1/4 w-64 h-64 rounded-full blur-3xl transform -translate-y-1/2"></div>
+              <div className="absolute top-1/2 right-1/4 w-64 h-64 rounded-full blur-3xl transform -translate-y-1/2"></div>
             </div>
             <p className="text-center text-gray-400 relative">
               copyright © 2024 Softan. All Rights Reserved
