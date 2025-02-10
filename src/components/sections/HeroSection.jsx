@@ -9,7 +9,7 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Image for mobile - Positioned absolutely */}
+          {/* Image for mobile */}
           <div className="absolute inset-0 lg:hidden">
             <div className="w-full h-full opacity-10">
               <img 

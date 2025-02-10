@@ -5,7 +5,7 @@ const AboutUs = () => {
     <section id="about" className="py-16 md:py-24 bg-white">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          {/* Left Image Column - Made larger */}
+          {/* Left Image Column */}
           <div className="lg:pl-8 relative">
             <div className="relative aspect-[4/3] md:aspect-auto">
               <img
@@ -16,26 +16,26 @@ const AboutUs = () => {
             </div>
           </div>
 
-          {/* Right Content Column - More space on right */}
+          {/* Right Content Column */}
           <div className="lg:pr-8 lg:max-w-[650px]">
             {/* Company Logo and Name */}
             <div className="flex items-center gap-3 mb-6">
               <h3 className="text-[#2B004D] text-lg">About SOFTAN TECH Solutions Limited</h3>
             </div>
 
-            {/* Main Heading - Increased size and spacing */}
+            {/* Main Heading */}
             <h2 className="text-5xl lg:text-[56px] font-bold mb-8 leading-tight">
               We Are Increasing Business Success With{' '}
               <span className="text-indigo-600">Technology</span>
             </h2>
 
-            {/* Description - Added max-width for better readability */}
+            {/* Description */}
             <p className="text-gray-600 text-lg mb-10 max-w-2xl">
               Synergistically incentivize effective imperative through fully researched
               intellectual capital. Appropriately fashion client-based.
             </p>
 
-            {/* Action Buttons - Added more space */}
+            {/* Action Buttons */}
             <div className="flex flex-wrap gap-6 mb-16">
               <button className="bg-indigo-600 text-white px-10 py-4 rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium">
                 FOUNDER
