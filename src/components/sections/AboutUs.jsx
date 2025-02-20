@@ -26,7 +26,7 @@ const AboutUs = () => {
             {/* Main Heading */}
             <h2 className="text-5xl lg:text-[56px] font-bold mb-8 leading-tight">
               We Are Increasing Business Success With{' '}
-              <span className="text-indigo-600">Technology</span>
+              <span className="text-teal-600">Technology</span>
             </h2>
 
             {/* Description */}
@@ -37,7 +37,7 @@ const AboutUs = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-6 mb-16">
-              <button className="bg-indigo-600 text-white px-10 py-4 rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium">
+              <button className="bg-teal-600 text-white px-10 py-4 rounded-lg hover:bg-teal-700 transition-colors text-sm font-medium">
                 FOUNDER
               </button>
               <button className="bg-[#1B2437] text-white px-10 py-4 rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium">
@@ -62,9 +62,6 @@ const AboutUs = () => {
                 Synergistically incentivize effective imperative through fully researched
                 intellectual capital. Appropriately fashion client-based.
                 </p>
-                <button className="w-full sm:w-auto bg-indigo-600 text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium">
-                VIEW MORE
-                </button>
             </div>
             </div>
           </div>

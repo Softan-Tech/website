@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Search, ShoppingCart, ChevronDown } from 'lucide-react';
 import { scrollToSection } from '../../utils/scrollUtils';
+import logoImage from '../../assets/images/Frame 113-Photoroom.png';
 
 const Logo = () => (
   <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('home')}>
-    <span className="text-xl font-bold text-[#2B004D]">SOFTAN TECH</span>
+    <img src={logoImage} alt="SOFTAN TECH Logo" className="h-10" />
+    <span className="text-xl font-bold text-teal-700">SOFTAN TECH</span>
   </div>
 );
 
@@ -16,7 +18,7 @@ const NavItem = ({ name, href, hasDropdown, onClick }) => (
         e.preventDefault();
         onClick();
       }}
-      className="flex items-center text-sm font-medium text-gray-700 hover:text-indigo-600 transition-colors"
+      className="flex items-center text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors"
     >
       {name}
       {hasDropdown && <ChevronDown className="ml-1 w-4 h-4" />}
@@ -92,20 +94,20 @@ const Navbar = () => {
 
           {/* Right Side Items */}
           <div className="hidden lg:flex items-center gap-6">
-            <button className="text-gray-700 hover:text-indigo-600 transition-colors">
+            <button className="text-gray-700 hover:text-teal-600 transition-colors" style={{display: "none"}}>
               <Search className="w-5 h-5" />
             </button>
             
-            <div className="relative">
-              <ShoppingCart className="w-5 h-5 text-gray-700 hover:text-indigo-600 transition-colors" />
-              <span className="absolute -top-2 -right-2 w-5 h-5 bg-indigo-600 text-white text-xs rounded-full flex items-center justify-center">
+            <div className="relative" style={{display: "none"}}>
+              <ShoppingCart className="w-5 h-5 text-gray-700 hover:text-teal-600 transition-colors" />
+              <span className="absolute -top-2 -right-2 w-5 h-5 bg-teal-600 text-white text-xs rounded-full flex items-center justify-center">
                 0
               </span>
             </div>
             
             <button 
               onClick={() => handleNavClick('contact')}
-              className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition-colors"
+              className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg transition-colors"
             >
               <span className="text-sm font-medium">MAKE APPOINTMENT</span>
               <ChevronDown className="w-4 h-4" />
@@ -114,20 +116,20 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-4">
-            <button className="text-gray-700 hover:text-indigo-600 transition-colors">
+            <button className="text-gray-700 hover:text-teal-600 transition-colors">
               <Search className="w-5 h-5" />
             </button>
             
             <div className="relative">
-              <ShoppingCart className="w-5 h-5 text-gray-700 hover:text-indigo-600 transition-colors" />
-              <span className="absolute -top-2 -right-2 w-5 h-5 bg-indigo-600 text-white text-xs rounded-full flex items-center justify-center">
+              <ShoppingCart className="w-5 h-5 text-gray-700 hover:text-teal-600 transition-colors" />
+              <span className="absolute -top-2 -right-2 w-5 h-5 bg-teal-600 text-white text-xs rounded-full flex items-center justify-center">
                 0
               </span>
             </div>
             
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-indigo-600 transition-colors p-2"
+              className="text-gray-700 hover:text-teal-600 transition-colors p-2"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -146,7 +148,7 @@ const Navbar = () => {
                     e.preventDefault();
                     handleNavClick(item.section);
                   }}
-                  className="flex items-center justify-between text-gray-700 hover:text-indigo-600 transition-colors py-2"
+                  className="flex items-center justify-between text-gray-700 hover:text-teal-600 transition-colors py-2"
                 >
                   <span className="text-sm font-medium">{item.name}</span>
                   {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
@@ -154,7 +156,7 @@ const Navbar = () => {
               ))}
               <button 
                 onClick={() => handleNavClick('contact')}
-                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-6 py-3 rounded-lg transition-colors mt-4"
+                className="w-full bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium px-6 py-3 rounded-lg transition-colors mt-4"
               >
                 MAKE APPOINTMENT
               </button>

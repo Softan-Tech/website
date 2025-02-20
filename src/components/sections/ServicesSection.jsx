@@ -4,9 +4,9 @@ import { Monitor, Sparkles, BarChart, Settings, ArrowRight } from 'lucide-react'
 const ServiceCard = ({ icon: Icon, title, description }) => (
   <div className="bg-white rounded-[32px] p-10 group transition-all duration-500 hover:translate-y-[-8px]">
     {/* Icon Container */}
-    <div className="bg-indigo-100/50 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 
-                    group-hover:bg-indigo-600 transition-all duration-500">
-      <Icon className="w-10 h-10 text-indigo-600 group-hover:text-white transition-all duration-500" />
+    <div className="bg-teal-100/50 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 
+                    group-hover:bg-teal-600 transition-all duration-500">
+      <Icon className="w-10 h-10 text-teal-600 group-hover:text-white transition-all duration-500" />
     </div>
 
     {/* Content */}
@@ -16,7 +16,7 @@ const ServiceCard = ({ icon: Icon, title, description }) => (
     </p>
 
     {/* Read More Button */}
-    <button className="inline-flex items-center text-indigo-600 font-semibold text-[15px] group/btn">
+    <button className="inline-flex items-center text-teal-600 font-semibold text-[15px] group/btn">
       READ MORE
       <span className="ml-2 transform translate-x-0 group-hover/btn:translate-x-2 transition-transform duration-300">
         <ArrowRight className="w-5 h-5" />
@@ -49,7 +49,7 @@ const ProgressCircle = ({ percentage, title, subtitle }) => (
             fill="none" 
             strokeDasharray={339.292}
             strokeDashoffset={339.292 * (1 - percentage/100)}
-            className="text-indigo-600 transition-[stroke-dashoffset] duration-1000 ease-out"
+            className="text-teal-600 transition-[stroke-dashoffset] duration-1000 ease-out"
           />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -115,11 +115,11 @@ const ServicesSection = () => {
 
             <h2 className="text-5xl lg:text-6xl font-bold text-white max-w-3xl leading-tight">
               We Provide Exclusive Services For{' '}
-              <span className="text-indigo-600">Your Business</span>
+              <span className="text-teal-600">Your Business</span>
             </h2>
           </div>
 
-          <button className="mt-8 lg:mt-0 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl transition-colors 
+          <button className="mt-8 lg:mt-0 px-8 py-4 bg-teal-600 hover:bg-teal-700 text-white rounded-xl transition-colors 
                            flex items-center gap-2 font-medium">
             VIEW ALL SERVICES
             <ArrowRight className="w-5 h-5" />
@@ -144,7 +144,7 @@ const ServicesSection = () => {
 
             <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
               More Than 5+ Year Experience<br />
-              We Provide <span className="text-indigo-600">IT Services</span>
+              We Provide <span className="text-teal-600">IT Services</span>
             </h2>
 
             <p className="text-gray-400 text-lg leading-relaxed mb-12 max-w-2xl">
@@ -166,11 +166,6 @@ const ServicesSection = () => {
               />
             </div>
 
-            <button className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl transition-colors 
-                             flex items-center gap-2 font-medium">
-              LEARN MORE
-              <ArrowRight className="w-5 h-5" />
-            </button>
           </div>
 
           {/* Right Image Section */}
@@ -182,7 +177,7 @@ const ServicesSection = () => {
             />
             
             {/* Active Clients Badge */}
-            <div className="absolute top-1/2 -left-16 transform -translate-y-1/2 bg-indigo-600 text-white 
+            <div className="absolute top-1/2 -left-16 transform -translate-y-1/2 bg-teal-600 text-white 
                           w-40 h-40 rounded-full flex flex-col items-center justify-center z-20">
               <span className="text-4xl font-bold">2K+</span>
               <span className="text-sm font-medium mt-1">Active Clients</span>

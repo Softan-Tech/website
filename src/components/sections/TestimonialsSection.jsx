@@ -4,12 +4,12 @@ import { Star, ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 const TestimonialCard = ({ image, review, name, role, company, rating }) => (
   <div className="relative">
     {/* Background Blur */}
-    <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/5 to-purple-600/5 rounded-[40px] blur-3xl"></div>
+    <div className="absolute inset-0 bg-gradient-to-r from-teal-600/5 to-purple-600/5 rounded-[40px] blur-3xl"></div>
     
     {/* Card Content */}
     <div className="relative bg-white/50 backdrop-blur-xl rounded-[40px] p-8 lg:p-12 overflow-hidden">
       {/* Large Quote Icon */}
-      <div className="absolute top-8 right-8 text-indigo-600/10">
+      <div className="absolute top-8 right-8 text-teal-600/10">
         <Quote className="w-24 h-24" />
       </div>
 
@@ -38,7 +38,7 @@ const TestimonialCard = ({ image, review, name, role, company, rating }) => (
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-indigo-600/5 rounded-full blur-2xl"></div>
+      <div className="absolute bottom-0 left-0 w-32 h-32 bg-teal-600/5 rounded-full blur-2xl"></div>
       <div className="absolute top-0 right-0 w-32 h-32 bg-purple-600/5 rounded-full blur-2xl"></div>
     </div>
   </div>
@@ -109,7 +109,7 @@ const TestimonialsSection = () => {
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             What happy clients say<br />
-            <span className="text-indigo-600">About Us?</span>
+            <span className="text-teal-600">About Us?</span>
           </h2>
         </div>
 
@@ -149,15 +149,15 @@ const TestimonialsSection = () => {
             <div className="flex justify-center gap-4 mt-12">
               <button 
                 onClick={prevSlide}
-                className="w-12 h-12 rounded-full border-2 border-indigo-600 flex items-center justify-center
-                         text-indigo-600 hover:bg-indigo-600 hover:text-white transition-colors duration-300"
+                className="w-12 h-12 rounded-full border-2 border-teal-600 flex items-center justify-center
+                         text-teal-600 hover:bg-teal-600 hover:text-white transition-colors duration-300"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <button 
                 onClick={nextSlide}
-                className="w-12 h-12 rounded-full border-2 border-indigo-600 flex items-center justify-center
-                         text-indigo-600 hover:bg-indigo-600 hover:text-white transition-colors duration-300"
+                className="w-12 h-12 rounded-full border-2 border-teal-600 flex items-center justify-center
+                         text-teal-600 hover:bg-teal-600 hover:text-white transition-colors duration-300"
               >
                 <ArrowRight className="w-5 h-5" />
               </button>

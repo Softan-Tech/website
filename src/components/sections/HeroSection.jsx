@@ -22,8 +22,8 @@ const HeroSection = () => {
 
           {/* Left Content */}
           <div className="relative z-10">
-            <div className="inline-block px-4 py-2 bg-indigo-100 rounded-full mb-6">
-              <span className="text-indigo-600 font-medium">BEST TECH SERVICE</span>
+            <div className="inline-block px-4 py-2 bg-teal-100 rounded-full mb-6">
+              <span className="text-teal-600 font-medium">BEST TECH SERVICE</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
@@ -35,13 +35,20 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all flex items-center group shadow-lg hover:shadow-indigo-500/50">
+              <a 
+                href="#about" 
+                className="px-8 py-4 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-all flex items-center group shadow-lg hover:shadow-teal-500/50"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 <span>ABOUT US</span>
                 <ArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform" size={20} />
-              </button>
+              </a>
               
-              <button className="px-6 py-4 flex items-center space-x-3 text-gray-700 hover:text-indigo-600 transition-colors group">
-                <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:shadow-indigo-500/30 transition-all">
+              <button style={{display: "none"}} className="px-6 py-4 flex items-center space-x-3 text-gray-700 hover:text-teal-600 transition-colors group">
+                <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:shadow-teal-500/30 transition-all">
                   <Play className="w-5 h-5 fill-current" />
                 </div>
                 <span className="font-medium">Watch Our Story</span>
@@ -60,7 +67,7 @@ const HeroSection = () => {
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-100 rounded-full opacity-50 blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-teal-100 rounded-full opacity-50 blur-2xl"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-100 rounded-full opacity-50 blur-2xl"></div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Facebook, Twitter, Instagram, Send, ChevronRight, Mail } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Send, ChevronRight, Mail, Phone, MapPin } from 'lucide-react';
 import { scrollToSection } from '../../utils/scrollUtils';
 
 const SocialIcon = ({ icon: Icon, href, delay }) => (
@@ -8,12 +8,12 @@ const SocialIcon = ({ icon: Icon, href, delay }) => (
     className="group relative"
     style={{ animationDelay: delay }}
   >
-    <div className="absolute inset-0 bg-indigo-600 rounded-lg blur-lg opacity-20 
+    <div className="absolute inset-0 bg-teal-600 rounded-lg blur-lg opacity-20 
                     group-hover:opacity-100 transition-opacity duration-500"></div>
     <div className="relative w-12 h-12 flex items-center justify-center bg-[#0F1629] 
-                    border border-indigo-500/20 rounded-lg overflow-hidden group-hover:-translate-y-1 
+                    border border-teal-500/20 rounded-lg overflow-hidden group-hover:-translate-y-1 
                     transition-all duration-300">
-      <div className="absolute inset-0 bg-indigo-600 translate-y-full group-hover:translate-y-0 
+      <div className="absolute inset-0 bg-teal-600 translate-y-full group-hover:translate-y-0 
                     transition-transform duration-500"></div>
       <Icon className="w-5 h-5 text-gray-400 group-hover:text-white relative z-10 transition-colors duration-300" />
     </div>
@@ -31,7 +31,7 @@ const FooterLink = ({ children, section, delay = "0s" }) => (
       className="group flex items-center py-2 transform hover:-translate-x-2 transition-transform duration-300"
     >
       <div className="w-8">
-        <div className="w-2 h-2 bg-indigo-600 rounded-full opacity-0 group-hover:opacity-100 
+        <div className="w-2 h-2 bg-teal-600 rounded-full opacity-0 group-hover:opacity-100 
                       transform translate-x-4 group-hover:translate-x-0 transition-all duration-300"></div>
       </div>
       <span className="text-gray-400 group-hover:text-white transition-colors duration-300">{children}</span>
@@ -43,11 +43,26 @@ const FooterSection = ({ title, children, className = "" }) => (
   <div className={className}>
     <div className="relative mb-8 overflow-hidden">
       <div className="flex items-center gap-4">
-        <div className="w-2 h-8 bg-indigo-600 rounded-full"></div>
+        <div className="w-2 h-8 bg-teal-600 rounded-full"></div>
         <h3 className="text-xl font-bold text-white tracking-wide">{title}</h3>
       </div>
     </div>
     {children}
+  </div>
+);
+
+const ContactInfo = ({ icon: Icon, text, href }) => (
+  <div className="flex items-start gap-4 mb-4">
+    <div className="w-10 h-10 bg-teal-600/10 rounded-lg flex items-center justify-center mt-1">
+      <Icon className="w-5 h-5 text-teal-500" />
+    </div>
+    <div>
+      {href ? (
+        <a href={href} className="text-gray-400 hover:text-teal-400 transition-colors duration-300">{text}</a>
+      ) : (
+        <p className="text-gray-400">{text}</p>
+      )}
+    </div>
   </div>
 );
 
@@ -56,11 +71,11 @@ const Newsletter = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative w-full bg-[#0B0F1E] p-8 rounded-2xl border border-indigo-500/10">
+    <div className="relative w-full bg-[#0B0F1E] p-8 rounded-2xl border border-teal-500/10">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden rounded-2xl">
-        <div className="absolute top-0 left-0 w-32 h-32 bg-indigo-600/10 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-32 h-32 bg-indigo-600/10 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 left-0 w-32 h-32 bg-teal-600/10 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-32 h-32 bg-teal-600/10 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       {/* Content */}
@@ -80,7 +95,7 @@ const Newsletter = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email Address"
             className="w-full px-6 py-4 bg-[#080B14] rounded-xl text-white placeholder:text-gray-500 
-                     border border-indigo-500/20 focus:outline-none focus:border-indigo-600 
+                     border border-teal-500/20 focus:outline-none focus:border-teal-600 
                      transition-all duration-300"
           />
           <button 
@@ -88,7 +103,7 @@ const Newsletter = () => {
             onMouseLeave={() => setIsHovered(false)}
             className="absolute right-2 top-1/2 transform -translate-y-1/2 group"
           >
-            <div className="relative w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center 
+            <div className="relative w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center 
                           overflow-hidden transition-transform duration-300 hover:scale-110">
               <Send className={`w-5 h-5 text-white transform transition-transform duration-500 
                             ${isHovered ? '-translate-x-12' : 'translate-x-0'}`} />
@@ -135,10 +150,10 @@ const Footer = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16">
+      <div className="mx-auto max-w-[1800px] px-8 lg:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-12 gap-16">
           {/* About Company */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-2">
             <FooterSection title="ABOUT COMPANY">
               <p className="text-gray-400 mb-8 leading-relaxed">
                 A professional transparent ROI through low-risk high-yield imperatives.
@@ -153,6 +168,28 @@ const Footer = () => {
                     delay={`${index * 100}ms`}
                   />
                 ))}
+              </div>
+            </FooterSection>
+          </div>
+
+          {/* Contact Information */}
+          <div className="lg:col-span-2">
+            <FooterSection title="CONTACT INFO">
+              <div className="space-y-1">
+                <ContactInfo 
+                  icon={Phone} 
+                  text="+254705706442" 
+                  href="tel:+254705706442" 
+                />
+                <ContactInfo 
+                  icon={Mail} 
+                  text="info@softan.tech" 
+                  href="mailto:info@softan.tech" 
+                />
+                <ContactInfo 
+                  icon={MapPin} 
+                  text="10th Floor, Mercure, Upperhill, Nairobi" 
+                />
               </div>
             </FooterSection>
           </div>
@@ -192,7 +229,7 @@ const Footer = () => {
           </div>
 
           {/* Newsletter */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <Newsletter />
           </div>
         </div>
