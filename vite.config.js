@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/website/', // Add this for GitHub Pages - replace 'website' with your actual repository name
+  base: '/website/', 
   plugins: [react()],
   resolve: {
     alias: {
@@ -26,7 +26,7 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: true,
-    minify: "esbuild", // Changed from terser to esbuild which is included by default
+    minify: "esbuild", 
     chunkSizeWarningLimit: 1600,
     rollupOptions: {
       output: {
