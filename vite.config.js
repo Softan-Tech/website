@@ -1,9 +1,10 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
 import path from "path";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/website/', // Add this for GitHub Pages - replace 'website' with your actual repository name
   plugins: [react()],
   resolve: {
     alias: {
@@ -25,13 +26,12 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: true,
-    minify: "terser",
+    minify: "esbuild", // Changed from terser to esbuild which is included by default
     chunkSizeWarningLimit: 1600,
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ["react", "react-dom"],
-          utils: ["lodash", "lucide-react"]
+          vendor: ["react", "react-dom"]
         }
       }
     }
