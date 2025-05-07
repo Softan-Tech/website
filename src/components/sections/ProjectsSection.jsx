@@ -318,10 +318,10 @@ const ProjectsSection = () => {
   ];
 
   const stats = [
-    { icon: MousePointerClick, number: '6+', label: 'Finished Projects' },
-    { icon: Users, number: '4+', label: 'Happy Clients' },
-    { icon: Award, number: '7+', label: 'Honorable Awards' },
-    { icon: CheckCircle, number: '10+', label: 'Skilled Experts' }
+    { icon: MousePointerClick, number: '500+', label: 'Finished Projects' },
+    { icon: Users, number: '2K+', label: 'Happy Clients' },
+    { icon: Award, number: '10+', label: 'Honorable Awards' },
+    { icon: CheckCircle, number: '15+', label: 'Skilled Experts' }
   ];
 
   const openModal = (service) => {

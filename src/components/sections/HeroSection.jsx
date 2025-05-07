@@ -13,7 +13,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 lg:hidden">
             <div className="w-full h-full opacity-10">
               <img 
-                src="/src/assets/images/image 1.png"
+                src="/src/assets/images/image-1.webp"
                 alt="Background illustration"
                 className="w-full h-full object-cover object-center"
               />
@@ -27,11 +27,11 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
-              Make The Easiest Solution For You
+            Empowering Businesses Through Innovative Tech Solutions
             </h1>
             
             <p className="text-gray-600 text-lg mb-8 max-w-xl">
-              Energistically harness ubiquitous imperative without state of the art collaboration and idea-sharing. Monotonectally parallel task cross-unit experience and front-end.
+            At Softan Tech, we design and develop intelligent software, digital platforms, and automation tools that drive efficiency, improve customer engagement, and scale your business in today’s fast-paced digital world.
             </p>
             
             <div className="flex flex-wrap gap-4">
@@ -60,7 +60,7 @@ const HeroSection = () => {
           <div className="relative hidden lg:block">
             <div className="relative z-10">
               <img 
-                src="/src/assets/images/image 1.png"
+                src="/src/assets/images/image-1.webp"
                 alt="Team collaboration illustration"
                 className="w-full h-auto rounded-lg"
               />

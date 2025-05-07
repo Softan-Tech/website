@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Monitor, Sparkles, BarChart, Settings, ArrowRight, X, ChevronRight, Code, Database, Server, Smartphone, Cloud, ShieldCheck, PieChart, TrendingUp, Share, Mail, Globe, Target } from 'lucide-react';
+import { Monitor, Sparkles, BarChart, Settings, ArrowRight, X, ChevronRight, Code, Database, Server, Smartphone, Cloud, ShieldCheck, PieChart, TrendingUp, Share, Mail, Globe, Target, Lightbulb, Layers, Laptop, BarChart3, Users } from 'lucide-react';
 
 // Service Card Component
 const ServiceCard = ({ icon: Icon, title, description, onClick }) => (
@@ -93,6 +93,8 @@ const ServiceDetailModal = ({ isOpen, onClose, service }) => {
     'Quality Assurance',
     'Delivery & Support'
   ];
+
+
 
   return (
     <>
@@ -708,7 +710,7 @@ const ServicesSection = () => {
     // Prevent background scrolling
     document.body.style.overflow = 'hidden';
   };
-  
+  const [showModal, setShowModal] = useState(false);
   return (
     <section id="services" className="relative">
       {/* Main Background Image with Overlay */}
@@ -767,36 +769,45 @@ const ServicesSection = () => {
             </div>
 
             <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
-              More Than 5+ Year Experience<br />
-              We Provide <span className="text-teal-600">IT Services</span>
+              Driving Digital Success<br />
+              Through <span className="text-teal-600">Innovation & Expertise</span>
             </h2>
-
             <p className="text-gray-400 text-lg leading-relaxed mb-12 max-w-2xl">
-              Synergistically incentivize effective imperative through fully researched 
-              intellectual capital. Appropriately fashion client-based.
+            At Softan Tech, we don’t just deliver software—we architect solutions that spark innovation,
+            streamline operations, and future-proof your business. Here's why forward-thinking companies choose us.
             </p>
 
             {/* Progress Indicators */}
-            <div className="space-y-8 mb-12">
-              <ProgressCircle 
-                percentage={90} 
-                title="Business Growth" 
-                subtitle="Efficiently transition top-line ideas before market."
-              />
-              <ProgressCircle 
-                percentage={95} 
-                title="Quality Products" 
-                subtitle="Efficiently transition top-line ideas before market."
-              />
+            <div className="space-y-6 mb-12">
+              <div>
+                <h4 className="text-white text-xl font-semibold mb-1"> Innovative & Scalable Solutions</h4>
+                <p className="text-gray-400">
+                  We build adaptable systems that grow with your business and stand the test of time.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-white text-xl font-semibold mb-1"> End-to-End Development</h4>
+                <p className="text-gray-400">
+                  From initial strategy to post-launch support—we handle every step of your digital journey.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-white text-xl font-semibold mb-1"> Proven Expertise</h4>
+                <p className="text-gray-400">
+                  A portfolio of successful projects and satisfied clients across diverse industries.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-white text-xl font-semibold mb-1"> Dedicated Support</h4>
+                <p className="text-gray-400">
+                  We’re with you beyond launch—ensuring your systems stay secure, updated, and impactful.
+                </p>
+              </div>
             </div>
 
             <a 
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="inline-flex items-center px-8 py-4 bg-teal-600 hover:bg-teal-700 text-white rounded-xl transition-colors gap-2 font-medium"
+              onClick={() => setShowModal(true)}
+              className="inline-flex items-center px-8 py-4 bg-teal-600 hover:bg-teal-700 text-white rounded-xl transition-colors gap-2 font-medium cursor-pointer"
             >
               LEARN MORE
               <ArrowRight className="w-5 h-5" />
@@ -835,6 +846,104 @@ const ServicesSection = () => {
         allServices={allServices}
         onServiceSelect={openServiceDetail}
       />
+
+          {/* Modal */}
+          {showModal && (
+  <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-6">
+    <div className="bg-white rounded-3xl max-w-5xl w-full p-10 overflow-y-auto max-h-[90vh] shadow-2xl relative animate-fade-in">
+
+      {/* Close Button */}
+      <button 
+        onClick={() => setShowModal(false)} 
+        className="absolute top-4 right-4 text-gray-500 hover:text-teal-600 transition"
+      >
+        <X className="w-6 h-6" />
+      </button>
+
+      {/* Title */}
+      <h2 className="text-4xl font-bold text-teal-700 mb-8">
+        Why Softan Tech is the Right Fit
+      </h2>
+
+      {/* What Makes Us Different */}
+      <section className="mb-10">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <Lightbulb className="text-teal-500" /> What Makes Us Different
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
+          <div className="flex items-start gap-3">
+            <Layers className="text-teal-500 mt-1" />
+            <div>
+              <p className="font-semibold">Rapid Prototyping</p>
+              <p className="text-sm">We quickly turn ideas into working prototypes.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <Laptop className="text-teal-500 mt-1" />
+            <div>
+              <p className="font-semibold">Flexible Engagement</p>
+              <p className="text-sm">Suited for both short- and long-term projects.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <ShieldCheck className="text-teal-500 mt-1" />
+            <div>
+              <p className="font-semibold">Security & Compliance</p>
+              <p className="text-sm">Secure development aligned with best practices.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <Laptop className="text-teal-500 mt-1" />
+            <div>
+              <p className="font-semibold">Tech Stack Expertise</p>
+              <p className="text-sm">React, Node.js, Flutter, Django & more.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Snapshot */}
+      <section className="mb-10">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <BarChart3 className="text-teal-500" /> Project Success Snapshot
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-gray-800">
+          <div>
+            <p className="text-3xl font-bold text-teal-700">25+</p>
+            <p className="text-sm">Enterprise Solutions</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-teal-700">2K+</p>
+            <p className="text-sm">Active Clients</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-teal-700">95%</p>
+            <p className="text-sm">Client Retention</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-teal-700">1M+</p>
+            <p className="text-sm">API Calls / Month</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="mb-10">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <Lightbulb className="text-teal-500" /> Real-World Use Cases
+        </h3>
+        <ul className="space-y-3 text-gray-700 list-disc list-inside">
+          <li><strong>MobiChama:</strong> Empowered 200+ investment groups to manage finances digitally.</li>
+          <li><strong>TaxManager:</strong> Enabled KRA eTIMS compliance for SMEs.</li>
+          <li><strong>SaccoXchange:</strong> Digitized SACCO loan guarantee processes.</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+)}
+
+
     </section>
   );
 };

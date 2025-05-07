@@ -242,7 +242,7 @@ const Footer = () => {
               <div className="absolute top-1/2 right-1/4 w-64 h-64 rounded-full blur-3xl transform -translate-y-1/2"></div>
             </div>
             <p className="text-center text-gray-400 relative">
-              copyright © 2024 Softan. All Rights Reserved
+              copyright © 2025 Softan. All Rights Reserved
             </p>
           </div>
         </div>

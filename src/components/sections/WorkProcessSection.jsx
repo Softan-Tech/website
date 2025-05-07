@@ -45,27 +45,31 @@ const WorkProcessSection = () => {
     {
       number: '01',
       icon: FileText,
-      title: 'Select a project',
-      description: 'Energistically harness ubiquitous imperative without state of the art collaboration.'
+      title: 'Select a Project',
+      description:
+        'Collaborate with us to define your project goals, scope, and expectations to ensure a focused and tailored approach.',
     },
     {
       number: '02',
       icon: BarChart2,
-      title: 'Project analysis',
-      description: 'Energistically harness ubiquitous imperative without state of the art collaboration.'
+      title: 'Project Analysis',
+      description:
+        'We assess your business needs, conduct technical analysis, and define success metrics for an optimal development path.',
     },
     {
       number: '03',
       icon: Monitor,
-      title: 'Plan Execute',
-      description: 'Energistically harness ubiquitous imperative without state of the art collaboration.'
+      title: 'Plan & Execute',
+      description:
+        'Our team develops and iterates rapidly using agile methods, keeping you in the loop through every milestone.',
     },
     {
       number: '04',
       icon: Users,
-      title: 'Deliver Result',
-      description: 'Energistically harness ubiquitous imperative without state of the art collaboration.'
-    }
+      title: 'Deliver Results',
+      description:
+        'We launch with confidence, provide post-deployment support, and ensure your solution performs as promised.',
+    },
   ];
 
   return (

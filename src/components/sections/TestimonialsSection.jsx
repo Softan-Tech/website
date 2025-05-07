@@ -50,15 +50,17 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       image: '/src/assets/images/Rectangle 10.png',
-      review: 'Energistically harness ubiquitous imperative without state of the art collaboration and idea-sharing. Monotonectally parallel task cross-unit experience and front-end.',
+      review:
+        "Softan Tech helped us bring our digital vision to life faster than we thought possible. Their team's attention to detail and agile delivery truly stood out.",
       name: 'Sussan K',
       role: 'CEO',
-      company: 'KOmola',
+      company: 'Komola',
       rating: 5
     },
     {
-      image: '/src/assets/images/Rectangle 7.png',
-      review: 'Energistically harness ubiquitous imperative without state of the art collaboration and idea-sharing. Monotonectally parallel task cross-unit experience and front-end.',
+      image: '/src/assets/images/Dan.png',
+      review:
+        "From architecture to deployment, the Softan Tech team exceeded our expectations. Their ability to adapt to our workflows made collaboration seamless.",
       name: 'Handel Dan',
       role: 'CTO',
       company: 'Tech Corp',
@@ -66,29 +68,33 @@ const TestimonialsSection = () => {
     },
     {
       image: '/src/assets/images/Rectangle 9.png',
-      review: 'Energistically harness ubiquitous imperative without state of the art collaboration and idea-sharing. Monotonectally parallel task cross-unit experience and front-end.',
+      review:
+        "We needed a reliable tech partner, and Softan Tech delivered. Their UI/UX insights and technical implementation were top-notch.",
       name: 'Warren Keith',
       role: 'Director',
       company: 'Design Inc',
       rating: 5
     },
     {
-      image: '/src/assets/images/Rectangle 7.png',
-      review: 'Energistically harness ubiquitous imperative without state of the art collaboration and idea-sharing. Monotonectally parallel task cross-unit experience and front-end.',
-      name: 'Handel Dan',
-      role: 'CTO',
-      company: 'Tech Corp',
+      image: '/src/assets/images/Rectangle 8.png',
+      review:
+        "What impressed us most was the team's responsiveness and problem-solving mindset. They treated our challenges as their own.",
+      name: 'Linda M.',
+      role: 'Head of Operations',
+      company: 'AgroLink',
       rating: 5
     },
     {
-      image: '/src/assets/images/Rectangle 9.png',
-      review: 'Energistically harness ubiquitous imperative without state of the art collaboration and idea-sharing. Monotonectally parallel task cross-unit experience and front-end.',
-      name: 'Warren Keith',
-      role: 'Director',
-      company: 'Design Inc',
+      image: '/src/assets/images/Rectangle 6.png',
+      review:
+        "Their solutions improved our system performance significantly. We’ve seen real business growth since the collaboration began.",
+      name: 'David Otieno',
+      role: 'IT Manager',
+      company: 'FinServe',
       rating: 5
-    },
+    }
   ];
+  
 
   const nextSlide = () => {
     setActiveSlide((prev) => (prev + 1) % testimonials.length);

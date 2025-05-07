@@ -89,11 +89,11 @@ const JoinTeamCard = () => (
 const TeamSection = () => {
   const team = [
     {
-      image: '/src/assets/images/Rectangle 7.png',
+      image: '/src/assets/images/dan.png',
       name: 'Dan',
       role: 'Lead Developer',
       socials: [
-        { name: 'linkedin', icon: Linkedin, url: 'https://linkedin.com/in/dan-developer' },
+        { name: 'linkedin', icon: Linkedin, url: 'https://www.linkedin.com/in/handel-dan-bb51a6128/' },
         { name: 'twitter', icon: Twitter, url: 'https://twitter.com/dan_dev' },
         { name: 'github', icon: Github, url: 'https://github.com/dan-dev' },
         { name: 'email', icon: Mail, url: 'mailto:dan@softan.tech' }
