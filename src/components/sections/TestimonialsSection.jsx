@@ -49,7 +49,7 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      image: '/src/assets/images/Rectangle 10.png',
+      image: '/assets/images/Rectangle 10.png',
       review:
         "Softan Tech helped us bring our digital vision to life faster than we thought possible. Their team's attention to detail and agile delivery truly stood out.",
       name: 'Sussan K',
@@ -58,7 +58,7 @@ const TestimonialsSection = () => {
       rating: 5
     },
     {
-      image: '/src/assets/images/Dan.png',
+      image: '/assets/images/Dan.png',
       review:
         "From architecture to deployment, the Softan Tech team exceeded our expectations. Their ability to adapt to our workflows made collaboration seamless.",
       name: 'Handel Dan',
@@ -67,7 +67,7 @@ const TestimonialsSection = () => {
       rating: 5
     },
     {
-      image: '/src/assets/images/Rectangle 9.png',
+      image: '/assets/images/Rectangle 9.png',
       review:
         "We needed a reliable tech partner, and Softan Tech delivered. Their UI/UX insights and technical implementation were top-notch.",
       name: 'Warren Keith',
@@ -76,7 +76,7 @@ const TestimonialsSection = () => {
       rating: 5
     },
     {
-      image: '/src/assets/images/Rectangle 8.png',
+      image: '/assets/images/Rectangle 8.png',
       review:
         "What impressed us most was the team's responsiveness and problem-solving mindset. They treated our challenges as their own.",
       name: 'Linda M.',
@@ -85,7 +85,7 @@ const TestimonialsSection = () => {
       rating: 5
     },
     {
-      image: '/src/assets/images/Rectangle 6.png',
+      image: '/assets/images/Rectangle 6.png',
       review:
         "Their solutions improved our system performance significantly. We’ve seen real business growth since the collaboration began.",
       name: 'David Otieno',

@@ -716,7 +716,7 @@ const ServicesSection = () => {
       {/* Main Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="/src/assets/images/Programming background with person working with codes on computer.png"
+          src="/assets/images/Programming background with person working with codes on computer.png"
           alt="Programming"
           className="w-full h-full object-cover object-center"
         />
@@ -817,7 +817,7 @@ const ServicesSection = () => {
           {/* Right Image Section */}
           <div className="relative">
             <img
-              src="/src/assets/images/Vector.png"
+              src="/assets/images/Vector.png"
               alt="Team collaboration"
               className="w-full rounded-[40px] relative z-10"
             />

@@ -13,7 +13,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 lg:hidden">
             <div className="w-full h-full opacity-10">
               <img 
-                src="/src/assets/images/image-1.webp"
+                src="/assets/images/image-1.webp"
                 alt="Background illustration"
                 className="w-full h-full object-cover object-center"
               />
@@ -60,7 +60,7 @@ const HeroSection = () => {
           <div className="relative hidden lg:block">
             <div className="relative z-10">
               <img 
-                src="/src/assets/images/image-1.webp"
+                src="/assets/images/image-1.webp"
                 alt="Team collaboration illustration"
                 className="w-full h-auto rounded-lg"
               />

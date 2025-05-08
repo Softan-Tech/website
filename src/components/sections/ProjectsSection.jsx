@@ -171,7 +171,7 @@ const ProjectsSection = () => {
       icon: Code,
       title: 'Web Development',
       description: 'We build responsive, scalable and high-performance web applications tailored to your business needs.',
-      image: '/src/assets/images/web-dev.png',
+      image: '/assets/images/web-dev.png',
       fullDescription: 'Our web development services deliver custom, responsive, and high-performing web applications that drive business growth. We combine cutting-edge technologies with best practices to create solutions that not only meet but exceed your expectations.',
       features: [
         'Custom website and web application development',
@@ -220,7 +220,7 @@ const ProjectsSection = () => {
       icon: MonitorSmartphone,
       title: 'UI/UX Design',
       description: 'We create intuitive, engaging user interfaces and experiences that delight your customers and drive conversions.',
-      image: '/src/assets/images/web-design.png',
+      image: '/assets/images/web-design.png',
       fullDescription: 'Our UI/UX design services focus on creating intuitive, visually appealing interfaces that enhance user engagement and satisfaction. We combine aesthetics with functionality to deliver designs that not only look great but also provide seamless user experiences.',
       features: [
         'User research and persona development',
@@ -269,7 +269,7 @@ const ProjectsSection = () => {
       icon: Search,
       title: 'SEO Optimization',
       description: 'We improve your website\'s visibility in search engines, driving more organic traffic and qualified leads.',
-      image: '/src/assets/images/seo.png',
+      image: '/assets/images/seo.png',
       fullDescription: 'Our SEO optimization services are designed to improve your website\'s visibility in search engine results pages (SERPs), increase organic traffic, and drive high-quality leads to your business. We implement data-driven strategies that deliver measurable results.',
       features: [
         'Comprehensive SEO audit and analysis',

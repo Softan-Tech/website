@@ -89,7 +89,7 @@ const JoinTeamCard = () => (
 const TeamSection = () => {
   const team = [
     {
-      image: '/src/assets/images/dan.png',
+      image: '/assets/images/dan.png',
       name: 'Dan',
       role: 'Lead Developer',
       socials: [
@@ -100,7 +100,7 @@ const TeamSection = () => {
       ]
     },
     {
-      image: '/src/assets/images/Rectangle 9.png',
+      image: '/assets/images/Rectangle 9.png',
       name: 'Stacy',
       role: 'UI/UX Designer',
       socials: [
@@ -111,7 +111,7 @@ const TeamSection = () => {
       ]
     },
     {
-      image: '/src/assets/images/Rectangle 10.png',
+      image: '/assets/images/Rectangle 10.png',
       name: 'Jennifer',
       role: 'Project Manager',
       socials: [

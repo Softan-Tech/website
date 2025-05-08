@@ -345,7 +345,7 @@ const ContactSection = () => {
               {/* Form Image */}
               <div className="w-full h-48 mb-8 rounded-2xl overflow-hidden">
                 <img
-                  src="/src/assets/images/Rectangle 12.png"
+                  src="/assets/images/Rectangle 12.png"
                   alt="Contact"
                   className="w-full h-full object-cover"
                 />

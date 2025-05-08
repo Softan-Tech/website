@@ -63,7 +63,7 @@ const AboutUs = () => {
             <div className="lg:pl-8 relative">
               <div className="relative aspect-[4/3] md:aspect-auto">
                 <img
-                  src="/src/assets/images/about-us-left.png"
+                  src="/assets/images/about-us-left.png"
                   alt="Team collaboration"
                   className="w-full h-full object-cover rounded-[40px] overflow-hidden"
                 />
@@ -121,7 +121,7 @@ const AboutUs = () => {
               {/* <div className="bg-gray-100 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-8">
                 <div className="w-full sm:w-36 relative">
                   <img
-                    src="/src/assets/images/dan.png"
+                    src="/assets/images/dan.png"
                     alt="Founder"
                     className="w-full h-[240px] sm:w-36 sm:h-36 rounded-xl object-cover"
                   />
