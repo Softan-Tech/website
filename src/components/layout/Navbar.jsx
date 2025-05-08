@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Search, ShoppingCart, ChevronDown } from 'lucide-react';
 import { scrollToSection } from '../../utils/scrollUtils';
-import logoImage from '../../assets/images/Frame 113-Photoroom.png';
+import logoImage from '/assets/images/Frame 113-Photoroom.png';
 
 const Logo = () => (
   <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('home')}>
