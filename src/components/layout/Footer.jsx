@@ -126,10 +126,10 @@ const Footer = () => {
   ];
 
   const serviceLinks = [
-    { name: 'Web Development', section: 'services' },
+    { name: 'Managed IT Infrastructure', section: 'services' },
+    { name: 'Software Services', section: 'services' },
     { name: 'Digital Marketing', section: 'services' },
     { name: 'Business Analysis', section: 'services' },
-    { name: 'UI/UX Design', section: 'services' },
     { name: 'Cloud Services', section: 'services' }
   ];
 
@@ -139,6 +139,7 @@ const Footer = () => {
     { icon: Instagram, href: '#' },
   ];
 
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="relative bg-[#080B14] pt-24">
       {/* Top Banner */}
@@ -211,9 +212,9 @@ const Footer = () => {
             </FooterSection>
           </div>
 
-          {/* IT Services */}
+          {/* Services */}
           <div className="lg:col-span-2">
-            <FooterSection title="IT SERVICES">
+            <FooterSection title="SERVICES">
               <div className="space-y-2">
                 {serviceLinks.map((link, index) => (
                   <FooterLink 
@@ -242,7 +243,7 @@ const Footer = () => {
               <div className="absolute top-1/2 right-1/4 w-64 h-64 rounded-full blur-3xl transform -translate-y-1/2"></div>
             </div>
             <p className="text-center text-gray-400 relative">
-              copyright © 2025 Softan. All Rights Reserved
+              copyright © {currentYear} Softan. All Rights Reserved
             </p>
           </div>
         </div>

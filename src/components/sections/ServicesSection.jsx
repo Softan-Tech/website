@@ -245,6 +245,37 @@ const AllServicesModal = ({ isOpen, onClose, allServices, onServiceSelect }) => 
           
           {/* Content */}
           <div className="p-8 lg:p-10">
+            {/* Standalone Managed IT Infrastructure Section (Concise, grid style) */}
+            <div className="mb-12">
+              <h4 className="text-2xl font-bold mb-6 flex items-center">
+                <Server className="w-6 h-6 mr-2 text-teal-600" />
+                Managed IT Infrastructure
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow group transition-all duration-500 hover:translate-y-[-8px] hover:bg-teal-50">
+                  <div className="bg-teal-100/50 w-16 h-16 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-teal-600 transition-all duration-500">
+                    <Laptop className="w-8 h-8 text-teal-600 group-hover:text-white transition-all duration-500" />
+                  </div>
+                  <h5 className="font-bold mb-2">Hardware & Network</h5>
+                  <p className="text-gray-600 text-sm">Procurement, installation, and setup of high-performance hardware and secure networks (LAN, WAN, Wi-Fi, VPN).</p>
+                </div>
+                <div className="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow group transition-all duration-500 hover:translate-y-[-8px] hover:bg-teal-50">
+                  <div className="bg-teal-100/50 w-16 h-16 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-teal-600 transition-all duration-500">
+                    <ShieldCheck className="w-8 h-8 text-teal-600 group-hover:text-white transition-all duration-500" />
+                  </div>
+                  <h5 className="font-bold mb-2">Cybersecurity & Support</h5>
+                  <p className="text-gray-600 text-sm">Advanced security, proactive monitoring, rapid support, backup, disaster recovery, and compliance.</p>
+                </div>
+                <div className="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow group transition-all duration-500 hover:translate-y-[-8px] hover:bg-teal-50">
+                  <div className="bg-teal-100/50 w-16 h-16 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-teal-600 transition-all duration-500">
+                    <Cloud className="w-8 h-8 text-teal-600 group-hover:text-white transition-all duration-500" />
+                  </div>
+                  <h5 className="font-bold mb-2">Cloud Solutions</h5>
+                  <p className="text-gray-600 text-sm">Cloud integration, migration, hybrid/multi-cloud, containerization, and scalable infrastructure planning.</p>
+                </div>
+              </div>
+            </div>
+            {/* Software Development Services Grid */}
             <div className="mb-8">
               <h4 className="text-2xl font-bold mb-6 flex items-center">
                 <Code className="w-6 h-6 mr-2 text-teal-600" />
@@ -332,12 +363,12 @@ const ServicesSection = () => {
   
   // Featured services (displayed in the main grid)
   const featuredServices = [
-    {
-      icon: Monitor,
-      title: 'UI/UX Design',
-      description: 'We create intuitive, engaging user interfaces that enhance user experience and drive conversions, focusing on both aesthetics and functionality.',
-      category: 'software'
-    },
+        {
+          icon: Server,
+          title: 'Managed IT Infrastructure',
+          description: 'We provide end-to-end management of your technology environment. From high-performance hardware procurement and robust networking to advanced cybersecurity, proactive system support, and integrated cloud services, we ensure your business stays connected and protected.',
+          category: 'software'
+        },
     {
       icon: Sparkles,
       title: 'Digital Marketing',
@@ -362,6 +393,29 @@ const ServicesSection = () => {
   const allServices = [
     ...featuredServices,
     // Software Development Services
+        {
+          icon: Lightbulb,
+          title: 'AI Engineering',
+          shortDescription: 'End-to-end AI solutions to enable your business with intelligent automation and insights.',
+          fullDescription: 'Our AI Engineering services help companies leverage artificial intelligence for automation, data analysis, and smarter decision-making. We build custom AI models, integrate machine learning, and deploy scalable solutions tailored to your needs.',
+          features: [
+            'Custom AI model development',
+            'Machine learning integration',
+            'Data analytics & insights',
+            'Natural language processing',
+            'AI-powered automation',
+            'Deployment & support'
+          ],
+          process: [
+            'Discovery & Data Analysis',
+            'Model Design',
+            'Development',
+            'Testing',
+            'Deployment',
+            'Ongoing Optimization'
+          ],
+          category: 'software'
+        },
     {
       icon: Code,
       title: 'Web Development',
@@ -385,26 +439,48 @@ const ServicesSection = () => {
       ],
       category: 'software'
     },
+    // ...existing code...
     {
-      icon: Database,
-      title: 'Database Solutions',
-      shortDescription: 'Robust database design, migration, and optimization services.',
-      fullDescription: 'Our database experts design and implement efficient, secure, and scalable database solutions tailored to your business requirements. We help you manage and make sense of your data to drive informed decision-making.',
+      icon: Layers,
+      title: 'ERP Integrations & Deployments',
+      shortDescription: 'Seamless integration and deployment of ERP systems for business efficiency.',
+      fullDescription: 'We integrate and deploy ERP solutions tailored to your business needs, connecting finance, HR, inventory, and operations for streamlined workflows and data-driven decision making.',
       features: [
-        'Database design and architecture',
-        'Data migration and integration',
-        'Performance tuning and optimization',
-        'Database security implementation',
-        'Backup and recovery solutions',
-        'Data warehousing'
+        'Custom ERP integration',
+        'Deployment & configuration',
+        'Data migration',
+        'Process automation',
+        'User training & support'
       ],
       process: [
-        'Requirements Analysis', 
-        'Database Design', 
-        'Implementation', 
-        'Data Migration', 
-        'Testing', 
-        'Monitoring & Maintenance'
+        'Requirements Analysis',
+        'System Integration',
+        'Configuration',
+        'Testing',
+        'Deployment',
+        'Training & Support'
+      ],
+      category: 'software'
+    },
+    {
+      icon: BarChart3,
+      title: 'ETIMS Integrations',
+      shortDescription: 'Integrate your business with KRA ETIMS for compliance and invoice stamping.',
+      fullDescription: 'We help businesses integrate with KRA ETIMS, enabling automated invoice stamping and compliance with tax regulations. Our solutions ensure seamless connectivity, data accuracy, and ongoing support.',
+      features: [
+        'KRA ETIMS integration',
+        'Automated invoice stamping',
+        'Compliance management',
+        'Data accuracy',
+        'Ongoing support'
+      ],
+      process: [
+        'Assessment',
+        'Integration Planning',
+        'Implementation',
+        'Testing',
+        'Deployment',
+        'Support'
       ],
       category: 'software'
     },
@@ -451,29 +527,6 @@ const ServicesSection = () => {
         'Testing', 
         'Deployment', 
         'Updates & Support'
-      ],
-      category: 'software'
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud Solutions',
-      shortDescription: 'Cloud migration, infrastructure setup, and management.',
-      fullDescription: 'Our cloud solutions help businesses leverage the power of cloud computing for improved scalability, reduced costs, and enhanced security. We assist with migration, setup, and ongoing management of cloud infrastructure.',
-      features: [
-        'Cloud migration strategies',
-        'Infrastructure as Code (IaC)',
-        'Serverless architecture',
-        'Containerization with Docker and Kubernetes',
-        'CI/CD pipeline implementation',
-        'Cloud security and compliance'
-      ],
-      process: [
-        'Assessment', 
-        'Strategy Development', 
-        'Migration Planning', 
-        'Implementation', 
-        'Testing', 
-        'Monitoring'
       ],
       category: 'software'
     },

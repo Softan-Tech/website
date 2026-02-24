@@ -318,9 +318,9 @@ const ProjectsSection = () => {
   ];
 
   const stats = [
-    { icon: MousePointerClick, number: '500+', label: 'Finished Projects' },
-    { icon: Users, number: '2K+', label: 'Happy Clients' },
-    { icon: Award, number: '10+', label: 'Honorable Awards' },
+    { icon: MousePointerClick, number: '30+', label: 'Finished Projects' },
+    { icon: Users, number: '100+', label: 'Happy Clients' },
+    { icon: Award, number: '200+', label: 'Businesses Impacted' },
     { icon: CheckCircle, number: '15+', label: 'Skilled Experts' }
   ];
 

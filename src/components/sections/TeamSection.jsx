@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Linkedin, Twitter, Mail, Plus, Instagram, Github, Users, ArrowRight } from 'lucide-react';
 
 const SocialLink = ({ icon: Icon, href, ariaLabel }) => (
@@ -17,16 +17,14 @@ const SocialLink = ({ icon: Icon, href, ariaLabel }) => (
 const TeamMemberCard = ({ image, name, role, socials }) => (
   <div className="group relative">
     {/* Image Container */}
-    <div className="relative overflow-hidden rounded-3xl">
+    <div className="relative overflow-hidden rounded-3xl w-64 h-80 mx-auto">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-teal-900/90 
                     opacity-0 group-hover:opacity-100 transition-all duration-500 z-10"></div>
-      
       <img 
         src={image} 
         alt={name} 
-        className="w-full aspect-[3/4] object-cover transform group-hover:scale-110 transition-transform duration-700"
+        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
       />
-
       {/* Social Links */}
       <div className="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-center z-20 
                     translate-y-full group-hover:translate-y-0 transition-transform duration-500">
@@ -40,14 +38,15 @@ const TeamMemberCard = ({ image, name, role, socials }) => (
             />
           ))}
         </div>
-        
-        <a 
-          href={`mailto:${socials.find(s => s.name === 'email')?.url.replace('mailto:', '')}`}
-          className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center
-                  hover:bg-white group transition-colors duration-300"
-        >
-          <Mail className="w-5 h-5 text-white group-hover:text-teal-600" />
-        </a>
+        {socials.some(s => s.name === 'email') && (
+          <a 
+            href={`mailto:${socials.find(s => s.name === 'email')?.url.replace('mailto:', '')}`}
+            className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center
+                    hover:bg-white group transition-colors duration-300"
+          >
+            <Mail className="w-5 h-5 text-white group-hover:text-teal-600" />
+          </a>
+        )}
       </div>
     </div>
 
@@ -101,27 +100,75 @@ const TeamSection = () => {
     },
     {
       image: '/assets/images/Rectangle 9.png',
-      name: 'Stacy',
+      name: 'Vivian Kaino',
       role: 'UI/UX Designer',
       socials: [
-        { name: 'linkedin', icon: Linkedin, url: 'https://linkedin.com/in/stacy-designer' },
-        { name: 'instagram', icon: Instagram, url: 'https://instagram.com/stacy.designs' },
-        { name: 'twitter', icon: Twitter, url: 'https://twitter.com/stacy_designs' },
-        { name: 'email', icon: Mail, url: 'mailto:stacy@softan.tech' }
+        { name: 'linkedin', icon: Linkedin, url: 'https://linkedin.com/in/vivian-kaino' }
       ]
     },
     {
       image: '/assets/images/Rectangle 10.png',
-      name: 'Jennifer',
+      name: 'Stacy Jennifer',
       role: 'Project Manager',
       socials: [
-        { name: 'linkedin', icon: Linkedin, url: 'https://linkedin.com/in/jennifer-pm' },
-        { name: 'twitter', icon: Twitter, url: 'https://twitter.com/jennifer_pm' },
-        { name: 'instagram', icon: Instagram, url: 'https://instagram.com/jennifer.pm' },
-        { name: 'email', icon: Mail, url: 'mailto:jennifer@softan.tech' }
+        { name: 'linkedin', icon: Linkedin, url: 'https://linkedin.com/in/stacy-jennifer' }
+      ]
+    },
+    {
+      image: '/assets/images/Pius.png',
+      name: 'Pius Mionki',
+      role: 'DevOps Engineer',
+      socials: [
+        { name: 'linkedin', icon: Linkedin, url: 'https://www.linkedin.com/in/pius-mionki-a76164297/' }
+      ]
+    },
+    {
+      image: '/assets/images/Cedo.png',
+      name: 'Cedrouseroll Omondi',
+      role: 'Software Engineer',
+      socials: [
+        { name: 'linkedin', icon: Linkedin, url: 'https://www.linkedin.com/in/cedrouseroll-omondi-44b119252/' }
+      ]
+    },
+    {
+      image: '/assets/images/KenKithinji.png',
+      name: 'Ken Kithinji',
+      role: 'Senior Network and Systems Engineer',
+      socials: [
+        { name: 'linkedin', icon: Linkedin, url: 'https://www.linkedin.com/in/ken-kithinji-4159b4134/' }
+      ]
+    },
+    {
+      image: '/assets/images/EvansKibet.png',
+      name: 'Evans Kibet',
+      role: 'AI Engineer',
+      socials: [
+        { name: 'linkedin', icon: Linkedin, url: 'https://www.linkedin.com/in/e-kibet/' }
+      ]
+    },
+    {
+      image: '/assets/images/AnthonyOtieno.png',
+      name: 'Anthony Odhiambo',
+      role: 'Senior Data Scientist',
+      socials: [
+        { name: 'linkedin', icon: Linkedin, url: 'https://www.linkedin.com/in/anthony-odhiambo-566851137/' }
       ]
     }
   ];
+
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount = 4;
+  const intervalRef = useRef();
+
+  const next = () => setStartIndex((prev) => (prev + 1) % team.length);
+  const prev = () => setStartIndex((prev) => (prev - 1 + team.length) % team.length);
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setStartIndex((prev) => (prev + 1) % team.length);
+    }, 4000);
+    return () => clearInterval(intervalRef.current);
+  }, [team.length]);
 
   return (
     <section id="team" className="relative py-32 overflow-hidden">
@@ -148,12 +195,36 @@ const TeamSection = () => {
           </p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {team.map((member, index) => (
-            <TeamMemberCard key={index} {...member} />
-          ))}
-          <JoinTeamCard />
+        {/* Team Carousel */}
+        <div className="relative">
+          <button
+            onClick={prev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-teal-100 rounded-full p-2 shadow"
+            aria-label="Previous team members"
+          >
+            <ArrowRight className="w-6 h-6 rotate-180 text-teal-600" />
+          </button>
+          <div className="overflow-hidden">
+            <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${startIndex * (100 / visibleCount)}%)` }}>
+              {team.concat(team.slice(0, visibleCount)).map((member, idx) => (
+                idx < team.length + visibleCount && (
+                  <div key={idx} className="min-w-[250px] max-w-[300px] flex-shrink-0 px-3">
+                    <TeamMemberCard {...member} />
+                  </div>
+                )
+              ))}
+              <div className="min-w-[250px] max-w-[300px] flex-shrink-0 px-3">
+                <JoinTeamCard />
+              </div>
+            </div>
+          </div>
+          <button
+            onClick={next}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-teal-100 rounded-full p-2 shadow"
+            aria-label="Next team members"
+          >
+            <ArrowRight className="w-6 h-6 text-teal-600" />
+          </button>
         </div>
       </div>
     </section>
