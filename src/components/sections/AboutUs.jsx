@@ -95,28 +95,8 @@ const AboutUs = () => {
                   <p className="text-gray-600">To be the go-to technology partner for innovation and digital transformation in Africa and beyond.</p>
                 </div>
               </div>
-
-              <h3 className="text-2xl font-bold text-[#2B004D] mb-4">Core Values</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {values.map((val, i) => (
-                  <div key={i} className="p-6 bg-teal-50 rounded-xl hover:bg-white transition shadow">
-                    <val.icon className="text-teal-600 mb-4 w-8 h-8" />
-                    <h4 className="text-lg font-semibold mb-2">{val.title}</h4>
-                    <p className="text-gray-600 text-sm">{val.desc}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-6 mb-16 p-10" >
-              <a href="https://www.linkedin.com/in/handel-dan-bb51a6128/" target='_blank'><button className="bg-teal-600 text-white px-10 py-4 rounded-lg hover:bg-teal-700 transition-colors text-sm font-medium">
-                  FOUNDER
-                </button></a>
-                <button
-                  className="bg-teal-600 text-white px-10 py-4 rounded-lg hover:bg-teal-700 transition-colors text-sm font-medium"
-                  onClick={openAllTechnologyStack}
-                >
-                  TECHNOLOGY INDEX
-                </button>
-              </div>
+              {/* Founder and Technology Index buttons below Mission and Vision */}
+              {/* Buttons removed as requested */}
 
               {/* <div className="bg-gray-100 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-8">
                 <div className="w-full sm:w-36 relative">

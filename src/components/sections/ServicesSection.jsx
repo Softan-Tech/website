@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Monitor, Sparkles, BarChart, Settings, ArrowRight, X, ChevronRight, Code, Database, Server, Smartphone, Cloud, ShieldCheck, PieChart, TrendingUp, Share, Mail, Globe, Target, Lightbulb, Layers, Laptop, BarChart3, Users } from 'lucide-react';
+import { useState } from 'react';
+import { Sparkles, BarChart, Settings, ArrowRight, X, ChevronRight, Code, Server, Smartphone, Cloud, ShieldCheck, PieChart, TrendingUp, Share, Mail, Globe, Target, Lightbulb, Layers, Laptop, BarChart3, Users } from 'lucide-react';
 
 // Service Card Component
 const ServiceCard = ({ icon: Icon, title, description, onClick }) => (

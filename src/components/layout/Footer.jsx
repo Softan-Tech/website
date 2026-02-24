@@ -179,8 +179,8 @@ const Footer = () => {
               <div className="space-y-1">
                 <ContactInfo 
                   icon={Phone} 
-                  text="+254705706442" 
-                  href="tel:+254705706442" 
+                  text="+254725010144" 
+                  href="tel:+254725010144" 
                 />
                 <ContactInfo 
                   icon={Mail} 

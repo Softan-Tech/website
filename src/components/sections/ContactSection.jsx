@@ -143,9 +143,9 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Phone Number",
-      info: "+254705706442",
+      info: "+254725010144",
       action: "Call Now",
-      link: "tel:+254705706442"
+      link: "tel:+254725010144"
     },
     {
       icon: Mail,
