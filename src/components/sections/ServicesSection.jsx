@@ -825,7 +825,7 @@ const ServicesSection = () => {
             {/* Active Clients Badge */}
             <div className="absolute top-1/2 -left-16 transform -translate-y-1/2 bg-teal-600 text-white 
                           w-40 h-40 rounded-full flex flex-col items-center justify-center z-20">
-              <span className="text-4xl font-bold">2K+</span>
+              <span className="text-4xl font-bold">50+</span>
               <span className="text-sm font-medium mt-1">Active Clients</span>
             </div>
           </div>
@@ -913,7 +913,7 @@ const ServicesSection = () => {
             <p className="text-sm">Enterprise Solutions</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-teal-700">2K+</p>
+            <p className="text-3xl font-bold text-teal-700">50+</p>
             <p className="text-sm">Active Clients</p>
           </div>
           <div>

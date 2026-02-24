@@ -18,10 +18,13 @@ const NavItem = ({ name, href, hasDropdown, onClick }) => (
         e.preventDefault();
         onClick();
       }}
-      className="flex items-center text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors"
+      className={`flex items-center text-sm font-medium px-3 py-2 transition-colors ${NavItem.isActive ? 'text-teal-700' : 'text-gray-700 hover:text-teal-600'}`}
     >
       {name}
       {hasDropdown && <ChevronDown className="ml-1 w-4 h-4" />}
+      {NavItem.isActive && (
+        <span className="absolute left-0 right-0 bottom-0 h-1 bg-teal-600 rounded-t-md"></span>
+      )}
     </a>
   </div>
 );
@@ -73,14 +76,12 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="absolute inset-0 bg-white/80 backdrop-blur-md"></div>
-      
       <nav className="relative mx-auto max-w-[1800px] px-6">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-8">
-            <Logo />
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+          <Logo />
+          {/* Centered Navigation */}
+          <div className="hidden lg:flex flex-1 justify-center">
+            <div className="flex items-center space-x-3">
               {menuItems.map((item) => (
                 <NavItem 
                   key={item.name}
@@ -91,20 +92,17 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-
           {/* Right Side Items */}
           <div className="hidden lg:flex items-center gap-6">
             <button className="text-gray-700 hover:text-teal-600 transition-colors" style={{display: "none"}}>
               <Search className="w-5 h-5" />
             </button>
-            
             <div className="relative" style={{display: "none"}}>
               <ShoppingCart className="w-5 h-5 text-gray-700 hover:text-teal-600 transition-colors" />
               <span className="absolute -top-2 -right-2 w-5 h-5 bg-teal-600 text-white text-xs rounded-full flex items-center justify-center">
                 0
               </span>
             </div>
-            
             <button 
               onClick={() => handleNavClick('contact')}
               className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg transition-colors"
@@ -113,20 +111,17 @@ const Navbar = () => {
               <ChevronDown className="w-4 h-4" />
             </button>
           </div>
-
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-4">
             <button className="text-gray-700 hover:text-teal-600 transition-colors">
               <Search className="w-5 h-5" />
             </button>
-            
             <div className="relative">
               <ShoppingCart className="w-5 h-5 text-gray-700 hover:text-teal-600 transition-colors" />
               <span className="absolute -top-2 -right-2 w-5 h-5 bg-teal-600 text-white text-xs rounded-full flex items-center justify-center">
                 0
               </span>
             </div>
-            
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-teal-600 transition-colors p-2"
@@ -135,7 +130,6 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-
         {/* Mobile Menu */}
         {isOpen && (
           <div className="lg:hidden border-t border-gray-100">
@@ -148,7 +142,7 @@ const Navbar = () => {
                     e.preventDefault();
                     handleNavClick(item.section);
                   }}
-                  className="flex items-center justify-between text-gray-700 hover:text-teal-600 transition-colors py-2"
+                  className={`flex items-center justify-between text-gray-700 hover:text-teal-600 transition-colors py-2 ${activeSection === item.section ? 'border-b-2 border-teal-600' : ''}`}
                 >
                   <span className="text-sm font-medium">{item.name}</span>
                   {item.hasDropdown && <ChevronDown className="w-4 h-4" />}

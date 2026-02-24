@@ -33,7 +33,19 @@ const TestimonialCard = ({ image, review, name, role, company, rating }) => (
         </div>
         <div>
           <h4 className="font-bold text-xl mb-1">{name}</h4>
-          <p className="text-gray-600">{role} at {company}</p>
+          <p className="text-gray-600">
+            {role} at {
+              company === 'Gravity Solutions' ? (
+                <a href="https://gravitysolutions.net/" target="_blank" rel="noopener noreferrer" className="text-teal-700 underline hover:text-teal-500">{company}</a>
+              ) : company === 'Mirai Space Africa' ? (
+                <a href="https://miraispace.africa/" target="_blank" rel="noopener noreferrer" className="text-teal-700 underline hover:text-teal-500">{company}</a>
+              ) : company === "Noir d'Or Consultancy" ? (
+                <a href="https://www.noirdorconsultancy.com/" target="_blank" rel="noopener noreferrer" className="text-teal-700 underline hover:text-teal-500">{company}</a>
+              ) : company === 'Taimba' ? (
+                <a href="https://taimba.co.ke/" target="_blank" rel="noopener noreferrer" className="text-teal-700 underline hover:text-teal-500">{company}</a>
+              ) : company
+            }
+          </p>
         </div>
       </div>
 
@@ -48,51 +60,42 @@ const TestimonialsSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const testimonials = [
-    {
-      image: '/assets/images/Rectangle 10.png',
-      review:
-        "Softan Tech helped us bring our digital vision to life faster than we thought possible. Their team's attention to detail and agile delivery truly stood out.",
-      name: 'Sussan K',
-      role: 'CEO',
-      company: 'Komola',
-      rating: 5
-    },
-    {
-      image: '/assets/images/Dan.png',
-      review:
-        "From architecture to deployment, the Softan Tech team exceeded our expectations. Their ability to adapt to our workflows made collaboration seamless.",
-      name: 'Handel Dan',
-      role: 'CTO',
-      company: 'Tech Corp',
-      rating: 5
-    },
-    {
-      image: '/assets/images/Rectangle 9.png',
-      review:
-        "We needed a reliable tech partner, and Softan Tech delivered. Their UI/UX insights and technical implementation were top-notch.",
-      name: 'Warren Keith',
-      role: 'Director',
-      company: 'Design Inc',
-      rating: 5
-    },
-    {
-      image: '/assets/images/Rectangle 8.png',
-      review:
-        "What impressed us most was the team's responsiveness and problem-solving mindset. They treated our challenges as their own.",
-      name: 'Linda M.',
-      role: 'Head of Operations',
-      company: 'AgroLink',
-      rating: 5
-    },
-    {
-      image: '/assets/images/Rectangle 6.png',
-      review:
-        "Their solutions improved our system performance significantly. We’ve seen real business growth since the collaboration began.",
-      name: 'David Otieno',
-      role: 'IT Manager',
-      company: 'FinServe',
-      rating: 5
-    }
+          {
+            image: '/assets/images/Rectangle 10.png',
+            review:
+              "Softan Tech designed and implemented our entire office network at Mirai Space Africa, ensuring secure and efficient connectivity. Their ongoing support keeps our websites and email systems running smoothly, allowing our team to focus on what matters most.",
+            name: 'Janet Keru',
+            role: 'CEO',
+            company: 'Mirai Space Africa',
+            rating: 5
+          },
+          {
+            image: '/assets/images/ErickAmoloImage.jpeg',
+            review:
+              "Softan Tech made our KRA eTIMS integrations seamless. Their expertise helped us connect over 30 businesses, making invoice stamping and compliance effortless. We now save time, avoid errors, and focus on growing our business.",
+            name: 'Eric Amolo',
+            role: 'Product Consultant',
+            company: 'Gravity Solutions',
+            rating: 5
+          },
+          {
+            image: '/assets/images/LucyNjonga.png',
+            review:
+              "Softan Tech built our website from end to end, handling everything from design to SEO. Their expertise brought our vision to life and helped us reach more clients online. I highly recommend their team!",
+            name: 'Lucy Njonga',
+            role: 'Founder',
+            company: "Noir d'Or Consultancy",
+            rating: 5
+          },
+          {
+            image: '/assets/images/Dominique.png',
+            review:
+              "Softan Tech built our Delivery Management System from design to delivery. Their team was professional, responsive, and delivered a solution that transformed our operations.",
+            name: 'Dominique Kavuisya',
+            role: 'CEO and Co-Founder',
+            company: 'Taimba',
+            rating: 5
+          }
   ];
   
 
